@@ -1,0 +1,16 @@
+﻿@model List<Category>
+
+<div class="sidebar__item__categories">
+    <div class="sidebar__item__title">
+        <h6>Categories</h6>
+    </div>
+    <ul>
+        @foreach (var item in Model)
+        {
+            var categoryName = item.CategoryName;
+            var categoryCount = ViewBag.CategoryCounts.ContainsKey(categoryName) ? ViewBag.CategoryCounts[categoryName] : 0;
+            <li><a href="#">@categoryName <span>@categoryCount</span></a></li>
+            @* <li><a href="#">@item.CategoryName <span>0</span></a></li> *@
+        }
+    </ul>
+</div>

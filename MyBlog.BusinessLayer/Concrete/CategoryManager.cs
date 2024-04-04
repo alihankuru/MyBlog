@@ -18,6 +18,11 @@ namespace MyBlog.BusinessLayer.Concrete
             _categoryDal = categoryDal;
         }
 
+        public Dictionary<string, int> GetCategoryCounts()
+        {
+            return _categoryDal.GetCategoryCounts();
+        }
+
         public void TDelete(int id)
         {
             _categoryDal.Delete(id);

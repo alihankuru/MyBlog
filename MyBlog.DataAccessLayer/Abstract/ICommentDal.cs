@@ -9,6 +9,6 @@ namespace MyBlog.DataAccessLayer.Abstract
 {
     public interface ICommentDal:IGenericDal<Comment>
     {
-
+        void InsertWithDifferent(Comment entity);
     }
 }

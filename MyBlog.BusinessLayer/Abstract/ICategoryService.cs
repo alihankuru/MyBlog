@@ -9,6 +9,6 @@ namespace MyBlog.BusinessLayer.Abstract
 {
     public interface ICategoryService:IGenericeService<Category>
     {
-
+        Dictionary<string, int> GetCategoryCounts();
     }
 }

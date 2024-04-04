@@ -9,8 +9,7 @@ namespace MyBlog.DataAccessLayer.Abstract
 {
     public interface ICategoryDal : IGenericDal<Category>
     {
-
-
+        Dictionary<string, int> GetCategoryCounts();
 
     }
 }

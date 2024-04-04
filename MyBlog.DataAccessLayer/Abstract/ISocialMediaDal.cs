@@ -5,10 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyBlog.BusinessLayer.Abstract
+namespace MyBlog.DataAccessLayer.Abstract
 {
-    public interface ICommentService:IGenericeService<Comment>
+    public interface ISocialMediaDal:IGenericDal<SocialMedia>
     {
-        void InsertWithDifferent(Comment entity);
     }
 }

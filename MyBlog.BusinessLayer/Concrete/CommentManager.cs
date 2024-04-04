@@ -18,6 +18,11 @@ namespace MyBlog.BusinessLayer.Concrete
             _commentDal = commentDal;
         }
 
+        public void InsertWithDifferent(Comment entity)
+        {
+            _commentDal.InsertWithDifferent(entity);    
+        }
+
         public void TDelete(int id)
         {
            _commentDal.Delete(id);

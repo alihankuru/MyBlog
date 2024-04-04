@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyBlog.BusinessLayer.Abstract
 {
-    public interface ICommentService:IGenericeService<Comment>
+    public interface ISocialMediaService:IGenericeService<SocialMedia>
     {
-        void InsertWithDifferent(Comment entity);
     }
 }
