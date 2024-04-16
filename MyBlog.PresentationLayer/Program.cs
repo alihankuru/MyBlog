@@ -4,6 +4,7 @@ using MyBlog.DataAccessLayer.Abstract;
 using MyBlog.DataAccessLayer.Context;
 using MyBlog.DataAccessLayer.EntityFramework;
 using MyBlog.EntityLayer.Concrete;
+using MyBlog.PresentationLayer.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,7 +25,8 @@ builder.Services.AddScoped<ICategoryDal, EfCategoryDal>();
 
 
 builder.Services.AddDbContext<BlogContext>();
-builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<BlogContext>();
+builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<BlogContext>().AddErrorDescriber<CustomIdentityValidator>();
+
 
 
 builder.Services.AddControllersWithViews();
