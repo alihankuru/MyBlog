@@ -38,9 +38,11 @@
                                     <tr>
                                         <td>@item.ArticleId</td>
                                         <td>@item.Title</td>
+                                        <td>@item.Category.CategoryName</td>
+
                                         <td>@item.CreatedDate</td>
-                                        <td><a href="#" class="">Sil</a></td>
-                                        <td><a href="#" class="">Güncelle</a></td>
+                                        <td><a href="/Writer/Blog/DeleteBlog/@item.ArticleId" class="btn btn-danger">Sil</a></td>
+                                            <td><a href="/Writer/Blog/UpdateBlog/@item.ArticleId" class="">Güncelle</a></td>
                                     </tr>
                                     }
                                 </tbody>

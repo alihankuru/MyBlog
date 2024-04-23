@@ -10,5 +10,7 @@ namespace MyBlog.BusinessLayer.Abstract
     public interface IArticleService:IGenericeService<Article>
     {
         List<Article> TGetArticlesByWriter(int id);
+
+        List<Article> TGetArticlesWithCategoryByWriter(int id);
     }
 }
