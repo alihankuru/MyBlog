@@ -12,5 +12,7 @@ namespace MyBlog.BusinessLayer.Abstract
         List<Article> TGetArticlesByWriter(int id);
 
         List<Article> TGetArticlesWithCategoryByWriter(int id);
+        Article TGetArticlesWithCategoryByArticleId(int id);
+   
     }
 }

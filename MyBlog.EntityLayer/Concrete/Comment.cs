@@ -13,6 +13,8 @@ namespace MyBlog.EntityLayer.Concrete
         public DateTime CreatedDate { get; set; }
         public bool Status {  get; set; }
 
+        public int ArticleId { get; set; }
+        public Article Article { get; set; }
 
     }
 }

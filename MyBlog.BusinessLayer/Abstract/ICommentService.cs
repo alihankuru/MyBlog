@@ -10,5 +10,7 @@ namespace MyBlog.BusinessLayer.Abstract
     public interface ICommentService:IGenericeService<Comment>
     {
         void InsertWithDifferent(Comment entity);
+
+        List<Comment> TGetCommentByBlog(int id);
     }
 }

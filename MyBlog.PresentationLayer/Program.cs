@@ -20,6 +20,9 @@ builder.Services.AddScoped<IArticleDal, EfArticleDal>();
 builder.Services.AddScoped<ISocialMediaService, SocialMediaManager>();
 builder.Services.AddScoped<ISocialMediaDal, EfSocialMediaDal>();
 
+builder.Services.AddScoped<ICommentService, CommentManager>();
+builder.Services.AddScoped<ICommentDal, EfCommentDal>();
+
 builder.Services.AddScoped<ICategoryService, CategoryManager>();
 builder.Services.AddScoped<ICategoryDal, EfCategoryDal>();
 
