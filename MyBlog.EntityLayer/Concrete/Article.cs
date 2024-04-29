@@ -22,5 +22,7 @@ namespace MyBlog.EntityLayer.Concrete
         public Category Category { get; set; }
         public List<Comment> Comments { get; set; }
 
+        public bool Status { get; set; }
+
     }
 }

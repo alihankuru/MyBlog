@@ -38,7 +38,7 @@ namespace MyBlog.DataAccessLayer.EntityFramework
 
         public List<Article> GetArticlesWithCategoryByWriter(int id)
         {
-            var values = context.Articles.Where(x=>x.AppUserId==id).Include(x => x.Category).ToList();
+            var values = context.Articles.Where(x=>x.AppUserId==id).Include(x => x.Category).Include(x => x.AppUser).ToList();
             return values;
         }
 
