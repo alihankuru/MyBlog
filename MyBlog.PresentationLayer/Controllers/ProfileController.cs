@@ -20,8 +20,13 @@ namespace MyBlog.PresentationLayer.Controllers
             ViewBag.id=userInfo.Id;
             ViewBag.name=userInfo.Name;
             ViewBag.surname=userInfo.Surname;
+            ViewBag.image = userInfo.ImageUrl;
 
             return View();
         }
+
+      
+
+
     }
 }

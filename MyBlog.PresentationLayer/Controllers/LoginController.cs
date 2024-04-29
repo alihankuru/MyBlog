@@ -24,6 +24,8 @@ namespace MyBlog.PresentationLayer.Controllers
         public async Task<IActionResult> Index(LoginViewModel model)
         {
             var result = await _signInManager.PasswordSignInAsync(model.Username,model.Password,false,false);
+
+
             if (result.Succeeded)
             {
                 return RedirectToAction("Index","Profile");
