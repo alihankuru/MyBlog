@@ -18,6 +18,11 @@ namespace MyBlog.BusinessLayer.Concrete
             _writerDal = writerDal;
         }
 
+        public void TChangeStatus(int id)
+        {
+            _writerDal.ChangeStatus(id);
+        }
+
         public void TDelete(int id)
         {
             _writerDal.Delete(id);

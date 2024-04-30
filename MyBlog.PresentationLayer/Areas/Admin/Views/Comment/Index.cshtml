@@ -1,0 +1,66 @@
+﻿@model List<MyBlog.EntityLayer.Concrete.Comment>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Writer/Views/WriterLayout/Index.cshtml";
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="page-header">
+            <h3 class="page-title">Yorumlar Sayfası</h3>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Yorumlar</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"> Bloglara Gelen Yorumlar </li>
+                </ol>
+            </nav>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Yorum Listesi</h4>
+                        <p class="card-description">
+                            Bloglara gelen yorumları ilgili işlemleri aşağıdaki gibi panelden gerçekleştirebilirsiniz.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Yorum Id</th>
+                                        <th>Yorum</th>
+                                        <th>Yorum Tarihi</th>
+                                        <th>Blog İsmi</th>
+                                        <th>Blogun Yazarı</th>
+                                        <th>Durum</th>
+                                        <th>Durumu Değiştir</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.ArticleId</td>
+                                            <td>@item.Description</td>
+                                            <td>@item.CreatedDate</td>
+                                          
+                                            <td>@item.Article.Title</td>
+                                            <td>@item.Article.AppUser.Name</td>
+                                            <td>@item.Status</td>
+
+
+                                            <td><a href="/Admin/Comment/ChangeStatusComment/@item.CommentId" class="btn btn-danger">Durumu Değiştir</a></td>
+                                           
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

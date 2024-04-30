@@ -16,5 +16,9 @@ namespace MyBlog.EntityLayer.Concrete
         public int ArticleId { get; set; }
         public Article Article { get; set; }
 
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Message { get; set; }
+
     }
 }

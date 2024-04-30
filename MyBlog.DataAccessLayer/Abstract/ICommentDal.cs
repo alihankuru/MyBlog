@@ -11,5 +11,8 @@ namespace MyBlog.DataAccessLayer.Abstract
     {
         void InsertWithDifferent(Comment entity);
         List<Comment> GetCommentByBlog(int id);
+        List<Comment> GetCommentsWithArticle();
+        void ChangeStatus(int id);
+
     }
 }

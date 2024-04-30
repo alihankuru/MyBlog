@@ -22,7 +22,7 @@ namespace MyBlog.PresentationLayer.Controllers
         }
 
 
-            [HttpPost]
+        [HttpPost]
         public async Task<IActionResult> Index(RegisterViewModel model)
         {
             AppUser appUser = new AppUser() {

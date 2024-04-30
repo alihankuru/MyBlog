@@ -18,6 +18,11 @@ namespace MyBlog.BusinessLayer.Concrete
             _commentDal = commentDal;
         }
 
+        public List<Comment> TGetCommentsWithArticle()
+        {
+            return _commentDal.GetCommentsWithArticle();
+        }
+
         public void InsertWithDifferent(Comment entity)
         {
             _commentDal.InsertWithDifferent(entity);    
@@ -51,6 +56,11 @@ namespace MyBlog.BusinessLayer.Concrete
         public void TUpdate(Comment entity)
         {
             _commentDal.Update(entity);
+        }
+
+        public void TChangeStatus(int id)
+        {
+            _commentDal.ChangeStatus(id);
         }
     }
 }

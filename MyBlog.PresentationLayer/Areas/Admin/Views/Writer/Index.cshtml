@@ -1,0 +1,62 @@
+﻿@model List<MyBlog.EntityLayer.Concrete.AppUser>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Writer/Views/WriterLayout/Index.cshtml";
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="page-header">
+            <h3 class="page-title">Yorumlar Sayfası</h3>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Yorumlar</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"> Bloglara Gelen Yorumlar </li>
+                </ol>
+            </nav>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Yorum Listesi</h4>
+                        <p class="card-description">
+                            Bloglara gelen yorumları ilgili işlemleri aşağıdaki gibi panelden gerçekleştirebilirsiniz.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Yazar Id</th>
+                                        <th>İsim</th>
+                                        <th>Soyisim</th>
+                                     
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        @if(item.Status==true){
+                                        <tr>
+                                            <td>@item.Id</td>
+                                            <td>@item.Name</td>
+                                            <td>@item.Surname</td>
+
+                                            <td><a href="/Admin/Writer/DeleteWriter/@item.Id" class="btn btn-danger">Sil</a></td>
+                                            <td><a href="/Admin/Writer/UpdateWriter/@item.Id" class="">Güncelle</a></td>
+
+                                            
+                                        </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

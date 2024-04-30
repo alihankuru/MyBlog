@@ -1,4 +1,5 @@
-﻿using MyBlog.DataAccessLayer.Abstract;
+﻿using Microsoft.EntityFrameworkCore;
+using MyBlog.DataAccessLayer.Abstract;
 using MyBlog.DataAccessLayer.Context;
 using MyBlog.DataAccessLayer.Repositories;
 using MyBlog.EntityLayer.Concrete;
@@ -14,9 +15,32 @@ namespace MyBlog.DataAccessLayer.EntityFramework
     {
         BlogContext context = new BlogContext();
 
+        public void ChangeStatus(int id)
+        {
+            // Find the comment by its ID
+            var comment = context.Set<Comment>().Find(id);
+
+            // Check if the comment exists
+            if (comment != null)
+            {
+                // Change the status
+                comment.Status = !comment.Status;
+
+                // Save the changes to the database
+                context.SaveChanges();
+            }
+        }
+
         public List<Comment> GetCommentByBlog(int id)
         {
             var values = context.Comments.Where(x=>x.ArticleId==id).ToList();
+            return values;
+        }
+
+        public List<Comment> GetCommentsWithArticle()
+        {
+            var values = context.Comments.Include(x=>x.Article).ThenInclude(article => article.AppUser).ToList();
+
             return values;
         }
 
