@@ -1,0 +1,24 @@
+﻿
+
+<li class="nav-item dropdown d-none d-xl-flex border-0">
+
+    <a class="nav-link" id="languageDropdown">
+        @if (ViewBag.Weather == "Güneşli")
+        {
+            <i class="mdi mdi-weather-sunny"> @ViewBag.Temperature @ViewBag.Weather </i>
+        }
+        else if (ViewBag.Weather == "Bulutlu")
+        {
+            <i class="mdi mdi-weather-cloudy"> @ViewBag.Temperature @ViewBag.Weather </i>
+        }
+        else if (ViewBag.Weather == "Yağmurlu")
+        {
+            <i class="mdi mdi-weather-rainy"> @ViewBag.Temperature @ViewBag.Weather </i>
+        }
+        else
+        {
+            <i class="mdi mdi-weather-sunny"> @ViewBag.Temperature @ViewBag.Weather </i>
+        }
+    </a>
+
+</li>
