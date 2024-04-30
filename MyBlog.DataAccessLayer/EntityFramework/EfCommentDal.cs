@@ -37,6 +37,17 @@ namespace MyBlog.DataAccessLayer.EntityFramework
             return values;
         }
 
+        public List<Comment> GetCommentsForWriter(int id)
+        {
+            var values = context.Comments
+        .Where(comment => comment.Article.AppUserId == id).OrderByDescending(comment => comment.CreatedDate) // Assuming there's a CreatedDate property
+        .Take(3)
+        .ToList();
+
+           
+            return values;
+        }
+
         public List<Comment> GetCommentsWithArticle()
         {
             var values = context.Comments.Include(x=>x.Article).ThenInclude(article => article.AppUser).ToList();

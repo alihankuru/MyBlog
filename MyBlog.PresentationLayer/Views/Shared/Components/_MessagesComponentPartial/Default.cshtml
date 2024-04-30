@@ -1,0 +1,27 @@
+﻿@model List<MyBlog.EntityLayer.Concrete.Comment>
+
+<li class="nav-item dropdown">
+    <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+        <i class="mdi mdi-email-outline"></i>
+       
+       @*  <span class="count count-varient1">7</span> *@
+    </a>
+    <div class="dropdown-menu navbar-dropdown navbar-dropdown-large preview-list" aria-labelledby="notificationDropdown">
+        <h6 class="p-3 mb-0">Mesajlar</h6>
+
+        @foreach(var item in Model){
+        <a class="dropdown-item preview-item">
+            @* <div class="preview-thumbnail">
+                <img src="@item" alt="" class="profile-pic" />
+            </div> *@
+            <div class="preview-item-content">
+                <p class="mb-0">
+                    @item.Name <span class="text-small text-muted">@item.Message</span>
+                </p>
+            </div>
+        </a>
+        }
+        <div class="dropdown-divider"></div>
+    
+    </div>
+</li>

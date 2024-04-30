@@ -62,5 +62,10 @@ namespace MyBlog.BusinessLayer.Concrete
         {
             _commentDal.ChangeStatus(id);
         }
+
+        public List<Comment> TGetCommentsForWriter(int id)
+        {
+            return _commentDal.GetCommentsForWriter(id);
+        }
     }
 }

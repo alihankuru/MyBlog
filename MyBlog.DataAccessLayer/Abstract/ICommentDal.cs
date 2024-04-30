@@ -13,6 +13,8 @@ namespace MyBlog.DataAccessLayer.Abstract
         List<Comment> GetCommentByBlog(int id);
         List<Comment> GetCommentsWithArticle();
         void ChangeStatus(int id);
+        List<Comment> GetCommentsForWriter(int id);
+        
 
     }
 }

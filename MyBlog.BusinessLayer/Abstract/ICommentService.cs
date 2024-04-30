@@ -12,6 +12,7 @@ namespace MyBlog.BusinessLayer.Abstract
         void InsertWithDifferent(Comment entity);
         List<Comment> TGetCommentsWithArticle();
         List<Comment> TGetCommentByBlog(int id);
+        List<Comment> TGetCommentsForWriter(int id);
         void TChangeStatus(int id);
     }
 }
