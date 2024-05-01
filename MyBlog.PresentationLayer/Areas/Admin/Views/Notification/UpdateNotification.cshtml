@@ -1,0 +1,53 @@
+﻿@model Notification
+@{
+    ViewData["Title"] = "UpdateNotification";
+    Layout = "~/Areas/Writer/Views/WriterLayout/Index.cshtml";
+}
+
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="page-header">
+            <h3 class="page-title">Form elements</h3>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Bildirim Listesi</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"> Yeni Bildirim </li>
+                </ol>
+            </nav>
+        </div>
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Bildirim Güncelleme Ekleme Paneli</h4>
+                        <p class="card-description">Aşağıdaki Alanları doldurunuz</p>
+                        <form class="forms-sample" method="post">
+
+                            <input type="hidden" asp-for="NotificationId" />
+
+                            <div class="form-group">
+                                <label>Bildirim Başlığı</label>
+                                <input type="text" class="form-control" asp-for="NotificationTitle" />
+                            </div>
+
+                            <div class="form-group">
+                                <label>Bildirim Açıklaması</label>
+                                <input type="text" class="form-control" asp-for="Description" />
+                            </div>
+
+
+
+
+                            <button type="submit" class="btn btn-primary mr-2"> Kaydet </button>
+                            <button class="btn btn-light">Cancel</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+

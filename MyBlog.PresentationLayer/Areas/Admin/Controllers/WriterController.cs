@@ -119,7 +119,7 @@ namespace MyBlog.PresentationLayer.Areas.Admin.Controllers
                 }
             }
 
-            // If the model state is invalid or creation fails, redisplay the form with errors
+            
             return View(user);
         }
 
