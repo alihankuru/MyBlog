@@ -23,10 +23,16 @@ namespace MyBlog.PresentationLayer.Areas.Writer.Controllers
         }
 
         [Route("MyBlogList")]
-        public async Task<IActionResult> MyBlogList()
+        public async Task<IActionResult> MyBlogList(string searchString)
         {
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
-            var values=_articleService.TGetArticlesWithCategoryByWriter(user.Id);
+            var values = _articleService.TGetArticlesWithCategoryByWriter(user.Id);
+
+            // If a search string is provided, filter the articles
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                values = values.Where(article => article.Title.Contains(searchString)).ToList();
+            }
 
             return View(values);
         }

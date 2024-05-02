@@ -23,6 +23,21 @@
                         <p class="card-description">
                             Yazmış Olduğumuz blogları ilgili işlemleri aşağıdaki gibi panelden gerçekleştirebilirsiniz.
                         </p>
+                        <div class="row">
+
+                            <div class="input-group mb-3">
+
+                                <form method="get" action="/Writer/Blog/MyBlogList" class="input-group mb-3">
+                                    <div class="input-group mb-3">
+                                        <input type="text" name="searchString" id="searchInput" class="form-control" placeholder="Blog başlığına göre Arama yapın...">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-secondary" type="submit" id="searchButton">Ara</button>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
@@ -36,16 +51,16 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach(var item in Model){
-                                    <tr>
-                                        <td>@item.ArticleId</td>
-                                        <td>@item.Title</td>
-                                        <td>@item.Category.CategoryName</td>
-
-                                        <td>@item.CreatedDate</td>
-                                        <td><a href="/Writer/Blog/DeleteBlog/@item.ArticleId" class="btn btn-danger">Sil</a></td>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.ArticleId</td>
+                                            <td>@item.Title</td>
+                                            <td>@item.Category.CategoryName</td>
+                                            <td>@item.CreatedDate</td>
+                                            <td><a href="/Writer/Blog/DeleteBlog/@item.ArticleId" class="btn btn-danger">Sil</a></td>
                                             <td><a href="/Writer/Blog/UpdateBlog/@item.ArticleId" class="">Güncelle</a></td>
-                                    </tr>
+                                        </tr>
                                     }
                                 </tbody>
                             </table>
@@ -53,7 +68,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
