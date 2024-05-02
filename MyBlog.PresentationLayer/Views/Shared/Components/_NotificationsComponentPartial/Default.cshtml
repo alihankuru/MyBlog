@@ -1,0 +1,22 @@
+﻿@model List<MyBlog.EntityLayer.Concrete.Notification>
+
+<li class="nav-item dropdown d-none d-sm-flex">
+    <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-toggle="dropdown">
+        <i class="mdi mdi-bell-outline"></i>
+        @*  <span class="count count-varient2">5</span> *@
+    </a>
+    <div class="dropdown-menu navbar-dropdown navbar-dropdown-large preview-list" aria-labelledby="messageDropdown">
+        <h6 class="p-3 mb-0">Bildirimler</h6>
+
+        @foreach(var item in Model){
+        <a class="dropdown-item preview-item">
+            <div class="preview-item-content flex-grow">
+                <span class="badge badge-pill badge-success">@item.NotificationTitle</span>
+                <p class="text-small text-muted ellipsis mb-0"> @item.Description </p>
+            </div>
+                <p class="text-small text-muted align-self-start"> @item.Created.ToString("dd-MM-yyyy hh:mm") </p>
+        </a>
+        }
+        <h6 class="p-3 mb-0">Diğer Bildirimleri Gör</h6>
+    </div>
+</li>

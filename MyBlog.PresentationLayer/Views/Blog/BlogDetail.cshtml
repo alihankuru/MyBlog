@@ -437,9 +437,10 @@
                         </div>
                     </div>
 
+
                     @await Component.InvokeAsync("_CommentListByBlogComponentPartial")
 
-                    @* @await Component.InvokeAsync("_LeaveCommentComponentPartial") *@
+                    @await Component.InvokeAsync("_LeaveCommentComponentPartial", new { id = ViewBag.i })
 
                   
                     

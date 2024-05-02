@@ -2,6 +2,7 @@
 using MyBlog.BusinessLayer.Abstract;
 using MyBlog.EntityLayer.Concrete;
 using MyBlog.PresentationLayer.Areas.Admin.Models;
+using MyBlog.PresentationLayer.Models;
 
 namespace MyBlog.PresentationLayer.ViewComponents.CommentViewComponents
 {
@@ -14,16 +15,19 @@ namespace MyBlog.PresentationLayer.ViewComponents.CommentViewComponents
             _commentService = commentService;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync(int id)
+        [HttpGet]
+        public IViewComponentResult Invoke(int id)
         {
-            id = 1002;
-            var values = _commentService.TGetCommentByBlog(id);
-            ViewBag.BlogId = id;
 
-            return View(values);
+            var value = new LeaveACommentViewModel()
+            {
+                ArticleId = id
+            };
+            return View(value);
         }
 
-       
+
+
 
     }
 }
