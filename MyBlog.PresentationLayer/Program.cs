@@ -53,6 +53,8 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+app.UseStatusCodePagesWithReExecute("/ErrorPage/Index", "?code={0}");
+
 app.UseRouting();
 
 app.UseAuthentication();
