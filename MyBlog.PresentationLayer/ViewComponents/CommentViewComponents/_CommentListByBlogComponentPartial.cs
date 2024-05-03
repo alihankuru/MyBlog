@@ -14,8 +14,9 @@ namespace MyBlog.PresentationLayer.ViewComponents.CommentViewComponents
 
         public IViewComponentResult Invoke(int id)
         {
-            id = 1002;
+            //id = 1002;
             var values = _commentService.TGetCommentByBlog(id);
+         
 
             return View(values);
         }
