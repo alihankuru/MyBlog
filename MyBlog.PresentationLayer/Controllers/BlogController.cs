@@ -15,7 +15,7 @@ namespace MyBlog.PresentationLayer.Controllers
 
         public IActionResult BlogDetail(int id)
         {
-            id = 2007;
+            id = 2008;
             ViewBag.i = id;
             var values = _articleService.TGetById(id);
             ViewBag.createdDate = values.CreatedDate;
