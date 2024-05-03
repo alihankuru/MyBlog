@@ -59,5 +59,10 @@ namespace MyBlog.BusinessLayer.Concrete
         {
             return _articleDal.GetArticlesWithCategoryByArticleId(id);
         }
+
+        public List<Article> TGetListLast4Blog()
+        {
+            return _articleDal.GetListLast4Blog();
+        }
     }
 }

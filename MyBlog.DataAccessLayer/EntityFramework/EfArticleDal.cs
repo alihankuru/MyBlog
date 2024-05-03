@@ -42,6 +42,11 @@ namespace MyBlog.DataAccessLayer.EntityFramework
             return values;
         }
 
-       
+        public List<Article> GetListLast4Blog()
+        {
+            var values = context.Articles.OrderByDescending(x=>x.CreatedDate).Take(4).Include(x => x.Category).ToList();
+            return values;
+
+        }
     }
 }

@@ -13,6 +13,8 @@ namespace MyBlog.BusinessLayer.Abstract
 
         List<Article> TGetArticlesWithCategoryByWriter(int id);
         Article TGetArticlesWithCategoryByArticleId(int id);
-   
+
+        List<Article> TGetListLast4Blog();
+
     }
 }
