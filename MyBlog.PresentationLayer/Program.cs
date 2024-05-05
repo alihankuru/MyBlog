@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using MyBlog.BusinessLayer.Abstract;
 using MyBlog.BusinessLayer.Concrete;
 using MyBlog.DataAccessLayer.Abstract;
@@ -46,6 +48,19 @@ builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<BlogCo
 
 builder.Services.AddControllersWithViews();
 
+
+//var requireAuthorizePolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
+
+//builder.Services.AddControllersWithViews(opt =>
+//{
+//    opt.Filters.Add(new AuthorizeFilter(requireAuthorizePolicy));
+//});
+//builder.Services.ConfigureApplicationCookie(opts =>
+//{
+//    opts.LoginPath = "/Login/Index";
+//    opts.AccessDeniedPath = new PathString("/Login/AccessDeniedPath");
+//});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -60,24 +75,26 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
-//app.UseStatusCodePages(context =>
-//{
-//    var statusCode = context.HttpContext.Response.StatusCode;
-//    if (statusCode == 404)
-//    {
-//        context.HttpContext.Response.Redirect("/ErrorPage/Index?code=404");
-//    }
-//    else if (statusCode == 403)
-//    {
-//        context.HttpContext.Response.Redirect("/ErrorPage/Index2?code=403");
-//    }
-//    // Add more conditions for other status codes if needed
-//    else
-//    {
-//        context.HttpContext.Response.Redirect("/ErrorPage/GeneralError");
-//    }
-//    return Task.CompletedTask;
-//});
+app.UseStatusCodePages(context =>
+{
+    var statusCode = context.HttpContext.Response.StatusCode;
+    if (statusCode == 404)
+    {
+        context.HttpContext.Response.Redirect("/ErrorPage/Index?code=404");
+    }
+    else if (statusCode == 403)
+    {
+        context.HttpContext.Response.Redirect("/ErrorPage/Index2?code=403");
+    }
+    // Add more conditions for other status codes if needed
+    else
+    {
+        context.HttpContext.Response.Redirect("/ErrorPage/GeneralError");
+    }
+    return Task.CompletedTask;
+});
+
+
 
 app.UseRouting();
 

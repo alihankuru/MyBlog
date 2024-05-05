@@ -28,7 +28,7 @@ namespace MyBlog.PresentationLayer.Controllers
 
             if (result.Succeeded)
             {
-                return RedirectToAction("Index","Profile");
+                return RedirectToAction("MyBlogList", "Blog", new { area = "Writer" });
             }
             else {         
                 return View();
