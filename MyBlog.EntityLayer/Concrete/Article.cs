@@ -24,5 +24,7 @@ namespace MyBlog.EntityLayer.Concrete
 
         public bool Status { get; set; }
 
+        public List<ArticleTag> ArticleTags { get; set; }
+
     }
 }

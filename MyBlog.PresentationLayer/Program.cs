@@ -33,6 +33,12 @@ builder.Services.AddScoped<IWriterDal, EfWriterDal>();
 builder.Services.AddScoped<INotificationService, NotificationManager>();
 builder.Services.AddScoped<INotificationDal, EfNotificationDal>();
 
+builder.Services.AddScoped<ITagService, TagManager>();
+builder.Services.AddScoped<ITagDal, EfTagDal>();
+
+builder.Services.AddScoped<IArticleTagService, ArticleTagManager>();
+builder.Services.AddScoped<IArticleTagDal, EfArticleTagDal>();
+
 builder.Services.AddDbContext<BlogContext>();
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<BlogContext>().AddErrorDescriber<CustomIdentityValidator>();
 
@@ -54,24 +60,24 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
-app.UseStatusCodePages(context =>
-{
-    var statusCode = context.HttpContext.Response.StatusCode;
-    if (statusCode == 404)
-    {
-        context.HttpContext.Response.Redirect("/ErrorPage/Index?code=404");
-    }
-    else if (statusCode == 403)
-    {
-        context.HttpContext.Response.Redirect("/ErrorPage/Index2?code=403");
-    }
-    // Add more conditions for other status codes if needed
-    else
-    {
-        context.HttpContext.Response.Redirect("/ErrorPage/GeneralError");
-    }
-    return Task.CompletedTask;
-});
+//app.UseStatusCodePages(context =>
+//{
+//    var statusCode = context.HttpContext.Response.StatusCode;
+//    if (statusCode == 404)
+//    {
+//        context.HttpContext.Response.Redirect("/ErrorPage/Index?code=404");
+//    }
+//    else if (statusCode == 403)
+//    {
+//        context.HttpContext.Response.Redirect("/ErrorPage/Index2?code=403");
+//    }
+//    // Add more conditions for other status codes if needed
+//    else
+//    {
+//        context.HttpContext.Response.Redirect("/ErrorPage/GeneralError");
+//    }
+//    return Task.CompletedTask;
+//});
 
 app.UseRouting();
 

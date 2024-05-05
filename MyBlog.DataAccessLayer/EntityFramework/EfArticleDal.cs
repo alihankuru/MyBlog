@@ -46,7 +46,8 @@ namespace MyBlog.DataAccessLayer.EntityFramework
         {
             var values = context.Articles.OrderByDescending(x=>x.CreatedDate).Take(4).Include(x => x.Category).ToList();
             return values;
-
         }
+       
+
     }
 }
