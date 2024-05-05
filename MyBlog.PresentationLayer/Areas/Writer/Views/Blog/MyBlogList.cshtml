@@ -59,13 +59,15 @@
                                             <td>@item.Category.CategoryName</td>
                                             <td>@item.CreatedDate</td>
                                             <td><a href="/Writer/Blog/DeleteBlog/@item.ArticleId" class="btn btn-danger">Sil</a></td>
-                                            <td><a href="/Writer/Blog/UpdateBlog/@item.ArticleId" class="btn btn-danger">Güncelle</a></td>
-                                            <td><a href="/Writer/Blog/CreateTagBlog/@item.ArticleId" class="btn btn-danger">Tag</a></td>
+                                            <td><a href="/Writer/Blog/UpdateBlog/@item.ArticleId" class="btn btn-Warning">Güncelle</a></td>
+                                            <td><a href="/Writer/Blog/CreateTagBlog/@item.ArticleId" class="btn btn-Info">Etiketler</a></td>
 
                                         </tr>
                                     }
                                 </tbody>
                             </table>
+                            <td><a href="/Writer/Blog/CreateBlog" class="btn btn-Success">Yeni Blog Oluştur</a></td>
+
                         </div>
                     </div>
                 </div>
