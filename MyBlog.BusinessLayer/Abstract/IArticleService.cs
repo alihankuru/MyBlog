@@ -16,5 +16,7 @@ namespace MyBlog.BusinessLayer.Abstract
 
         List<Article> TGetListLast4Blog();
 
+        List<Article> TGetArticlesWithCategory();
+
     }
 }

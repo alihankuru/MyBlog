@@ -211,7 +211,7 @@
     <!-- Header Section End -->
     <!-- Single Post Section Begin -->
     <section class="single-post spad">
-        <div class="single-post__hero set-bg" data-setbg="/foodeiblog-master/img/categories/single-post/single-post-hero.jpg"></div>
+        <div class="single-post__hero set-bg" data-setbg="@ViewBag.CoverImage"></div>
         <div class="container">
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-8">
@@ -228,9 +228,8 @@
                             </ul>
                             <h4>@ViewBag.title</h4>
                             <ul class="widget">
-                                <li>by Admin</li>
+                                <li>@ViewBag.author @ViewBag.authorr</li>
                                 <li>3 min read</li>
-                                <li>20 Comment</li>
                             </ul>
                         </div>
                     </div>
@@ -248,7 +247,7 @@
                         </p>
                     </div>
                     @* Tags *@
-                    <div class="single-post__tags">
+                  @*   <div class="single-post__tags">
                         <a href="#">Food</a>
                         <a href="#">Vegan</a>
                         <a href="#">Tomato</a>
@@ -284,19 +283,17 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </div> *@
 
                     @* Profile And Social Media *@
                     <div class="single-post__author__profile">
                         <div class="single-post__author__profile__pic">
-                            <img src="img/categories/single-post/author-profile.jpg" alt="">
+                            <img src="@ViewBag.image" alt="">
                         </div>
                         <div class="single-post__author__profile__text">
-                            <h4>Alihan Kuru</h4>
+                            <h4>@ViewBag.author @ViewBag.authorr</h4>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                @ViewBag.about
                             </p>
                             <div class="single-post__author__profile__social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>

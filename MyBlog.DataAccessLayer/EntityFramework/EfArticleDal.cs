@@ -32,7 +32,11 @@ namespace MyBlog.DataAccessLayer.EntityFramework
 
         public Article GetArticlesWithCategoryByArticleId(int id)
         {
-            var values = context.Articles.Where(x=>x.ArticleId==id).Include(y=>y.Category).FirstOrDefault();
+            var values = context.Articles
+                        .Where(x => x.ArticleId == id)
+                        .Include(y => y.Category)
+                        .Include(y => y.AppUser) // Include AppUser
+                        .FirstOrDefault();
             return values;
         }
 

@@ -13,8 +13,8 @@ namespace MyBlog.EntityLayer.Concrete
         public string Surname { get; set; }
         public string? City { get; set; }
         public string? ImageUrl { get; set; }
-        public bool Status {  get; set; }   
-
+        public bool Status {  get; set; }
+        public string? About { get; set; }
         public List<Article> Articles { get; set; } 
     }
 }

@@ -21,11 +21,17 @@ namespace MyBlog.PresentationLayer.Controllers
 
             ViewBag.createdDate = values.CreatedDate;
             ViewBag.title=values.Title;
+            ViewBag.CoverImage = values.CoverImageUrl;
            
 
             var values2 = _articleService.TGetArticlesWithCategoryByArticleId(id);
             ViewBag.categoryName = values2.Category.CategoryName;
             @ViewBag.detail=values.Detail;
+
+            ViewBag.author=values2.AppUser.Name;
+            ViewBag.authorr = values2.AppUser.Surname;
+            ViewBag.image = values2.AppUser.ImageUrl;
+            ViewBag.about = values2.AppUser.About;
 
             return View();
         }

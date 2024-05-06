@@ -1,5 +1,12 @@
 ﻿@model List<Article>
 
+
+@{
+    System.Globalization.CultureInfo turkishCulture = new System.Globalization.CultureInfo("tr-TR");
+    System.Threading.Thread.CurrentThread.CurrentCulture = turkishCulture;
+}
+
+
 <div class="sidebar__feature__item">
     <div class="sidebar__item__title">
         <h6>Bu Hafta Trend Bloglar</h6>

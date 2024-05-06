@@ -3,8 +3,6 @@ using MyBlog.BusinessLayer.Abstract;
 
 namespace MyBlog.PresentationLayer.ViewComponents.DefaultViewComponents
 {
-    
-
     public class _BlogListComponentPartial : ViewComponent
     {
         private readonly IArticleService _articleService;
@@ -16,9 +14,7 @@ namespace MyBlog.PresentationLayer.ViewComponents.DefaultViewComponents
 
         public IViewComponentResult Invoke()
         {
-
-            
-            var values = _articleService.TGetListAll();
+            var values = _articleService.TGetArticlesWithCategory();
             return View(values);
         }
     

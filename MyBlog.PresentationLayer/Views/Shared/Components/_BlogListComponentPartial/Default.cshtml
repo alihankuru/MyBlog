@@ -1,10 +1,13 @@
 ﻿@model List<Article>
 
-
+@{
+    System.Globalization.CultureInfo turkishCulture = new System.Globalization.CultureInfo("tr-TR");
+    System.Threading.Thread.CurrentThread.CurrentCulture = turkishCulture;
+}
 
 <div class="col-lg-8 col-md-8">
     <div class="breadcrumb__text">
-        <h2>Categories: <span>Tüm Bloglar</span></h2>
+        <h2>Bloglar: <span>Tüm Bloglar</span></h2>
         <div class="breadcrumb__option">
             <a href="#">Ana Sayfa</a>
             <span>Blog Listesi</span>
@@ -25,7 +28,7 @@
             </div>
             <div class="col-lg-6 col-md-6">
                 <div class="categories__post__item__text">
-                    <span class="post__label">Kategori</span>
+                    <span class="post__label">Kategori: @item.Category.CategoryName</span>
                         <h3><a href="/Blog/BlogDetail/@item.ArticleId">@item.Title</a></h3>
                     <ul class="post__widget">
                       
@@ -35,7 +38,7 @@
                     <p>
                             @if (item.Detail != null && item.Detail.Length > 200)
                             {
-                                @item.Detail.Substring(0, 200)
+                                @item.Detail.Substring(0, 250)
                             }
                             else
                             {

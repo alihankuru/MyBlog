@@ -7,7 +7,7 @@ namespace MyBlog.PresentationLayer.ViewComponents.WriterLayoutViewComponents
     {
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            string api = "b00c65309881071f4de42bede2c7d662";
+            string api = "";
             string connection = "https://api.openweathermap.org/data/2.5/weather?q=istanbul,tr&mode=xml&lang=tr&units=metric&APPID=" + api;
 
             XDocument weather = XDocument.Load(connection);
